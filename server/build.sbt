@@ -17,6 +17,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http" % "10.2.7",
   "com.typesafe.akka" %% "akka-http-spray-json" % "10.2.7",
 
+  "ch.megard" %% "akka-http-cors" % "1.1.2",
+
   "com.typesafe.slick" %% "slick" % "3.3.3",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.3.3",
 
@@ -24,7 +26,8 @@ libraryDependencies ++= Seq(
 
   "com.h2database" % "h2" % "1.4.196",
 
-  "org.scalatest" %% "scalatest" % "3.0.4" % Test
+
+  "org.scalatest" %% "scalatest" % "3.2.9" % Test
 )
 
 Revolver.settings
