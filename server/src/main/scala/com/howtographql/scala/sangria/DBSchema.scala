@@ -40,3 +40,7 @@ object DBSchema {
   }
 
 }
+
+case class MyContext(dao: DAO) {
+  
+}
