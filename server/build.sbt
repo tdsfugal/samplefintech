@@ -17,8 +17,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http" % "10.2.7",
   "com.typesafe.akka" %% "akka-http-spray-json" % "10.2.7",
 
-  "com.typesafe.slick" %% "slick" % "3.2.1",
-  "com.typesafe.slick" %% "slick-hikaricp" % "3.2.1",
+  "com.typesafe.slick" %% "slick" % "3.3.3",
+  "com.typesafe.slick" %% "slick-hikaricp" % "3.3.3",
 
   "org.slf4j" % "slf4j-nop" % "1.6.6",
 
