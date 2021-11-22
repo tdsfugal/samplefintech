@@ -2,6 +2,8 @@ package com.howtographql.scala.sangria
 
 import slick.jdbc.H2Profile.api._
 
+import scala.io.Source
+
 import scala.concurrent.duration._
 import scala.concurrent.Await
 import scala.language.postfixOps
@@ -29,6 +31,16 @@ object DBSchema {
       Loan(3, "https://graphql.org/", "GraphQL specificiation")
     )
   )
+
+  def loadDatabase(){
+    val bufferedSource = Source.fromFile("./data/LoanStats_securev1_2017Q4.csv")
+    for (line <- bufferedSource.getLines) {
+      // just to see if it loads.  It does. 
+      val cols = line.split(",").map(_.trim)
+      println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)}")
+    }
+    bufferedSource.close
+  }
 
   def createDatabase: DAO = {
     val db = Database.forConfig("h2mem")
