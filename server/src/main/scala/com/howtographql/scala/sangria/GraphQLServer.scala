@@ -35,14 +35,13 @@ object GraphQLServer {
       case Failure(error) =>
         complete(BadRequest, JsObject("error" -> JsString(error.getMessage)))
     }
-
   }
 
   private def executeGraphQLQuery(query: Document, operation: Option[String], vars: JsObject)(implicit ec: ExecutionContext) = {
     Executor.execute(
       GraphQLSchema.SchemaDefinition,
       query,
-      MyContext(dao),
+      LoanContext(dao),
       variables = vars,
       operationName = operation
     ).map(OK -> _)

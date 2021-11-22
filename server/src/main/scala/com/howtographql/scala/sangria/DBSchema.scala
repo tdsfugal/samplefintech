@@ -41,6 +41,6 @@ object DBSchema {
 
 }
 
-case class MyContext(dao: DAO) {
+case class LoanContext(dao: DAO) {
 
 }

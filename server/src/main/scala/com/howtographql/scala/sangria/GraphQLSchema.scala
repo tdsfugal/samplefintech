@@ -19,7 +19,7 @@ object GraphQLSchema {
 
   val QueryType = ObjectType(
     "Query",
-    fields[MyContext, Unit](
+    fields[LoanContext, Unit](
       Field("allLoans", ListType(LoanType), resolve = c => c.ctx.dao.allLoans)
     )
   )
