@@ -8,9 +8,9 @@ import sangria.macros.derive._
 
 object GraphQLSchema {
 
-  val LinkType = ObjectType[Unit, Link](
+  val LoanType = ObjectType[Unit, Loan](
        "Link",
-       fields[Unit, Link](
+       fields[Unit, Loan](
          Field("id", IntType, resolve = _.value.id),
          Field("url", StringType, resolve = _.value.url),
          Field("description", StringType, resolve = _.value.description)
@@ -20,9 +20,9 @@ object GraphQLSchema {
   val QueryType = ObjectType(
     "Query",
     fields[MyContext, Unit](
-      Field("allLinks", ListType(LinkType), resolve = c => c.ctx.dao.allLinks)
+      Field("allLoans", ListType(LoanType), resolve = c => c.ctx.dao.allLoans)
     )
   )
- 
+
   val SchemaDefinition = Schema(QueryType)
 }
